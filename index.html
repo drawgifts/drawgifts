@@ -150,23 +150,52 @@
                 <p>Find the perfect gift with smart recommendations</p>
             </div>
             
-            <div class="search-box">
-                <input type="text" id="gift-search" placeholder="Search for gifts...">
-                <select id="gift-category">
-                    <option value="">All Categories</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="fashion">Fashion</option>
-                    <option value="home">Home & Kitchen</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="toys">Toys & Games</option>
-                    <option value="books">Books</option>
-                </select>
-                <button id="search-gifts" class="btn btn-primary">Search</button>
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="gift-search" placeholder="Search products...">
+                </div>
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="gift-category">
+                        <option value="">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home & Kitchen</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="toys">Toys & Games</option>
+                        <option value="books">Books</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price</label>
+                    <select id="gift-price">
+                        <option value="">Any Price</option>
+                        <option value="500">Under ₹500</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000">₹1000+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Rating</label>
+                    <select id="gift-rating">
+                        <option value="">Any Rating</option>
+                        <option value="4">4★ & above</option>
+                        <option value="4.5">4.5★ & above</option>
+                    </select>
+                </div>
+                <button id="search-gifts" class="btn btn-primary">Find Gifts</button>
             </div>
             
-            <div id="gift-results" class="gift-results">
-                <p class="search-hint">Try: "headphones", "watch", "perfume", "coffee maker", etc.</p>
+            <div class="quick-filters">
+                <button class="filter-tag active" data-filter="all">All</button>
+                <button class="filter-tag" data-filter="bestseller">Best Sellers</button>
+                <button class="filter-tag" data-filter="under500">Under ₹500</button>
+                <button class="filter-tag" data-filter="4star">4★ & Above</button>
+                <button class="filter-tag" data-filter="deals">Deal of Day</button>
             </div>
+            
+            <div id="gift-results" class="gift-results"></div>
             
             <div class="amazon-disclaimer">
                 <p>As an Amazon Associate, I earn from qualifying purchases.</p>

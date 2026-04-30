@@ -1,36 +1,33 @@
-// Amazon Affiliate ID
 const AMAZON_AFFILIATE_TAG = 'dahinwal90-21';
-
-// Amazon Search URLs for popular gifts
 const AMAZON_SEARCH_URL = 'https://www.amazon.in/s?k=';
 
 const POPULAR_GIFTS = [
-    { name: 'boAt Nirvana Ivy Earbuds', price: '₹1,299', category: 'electronics', search: 'boAt+Nirvana+Ivy', image: '🎧' },
-    { name: 'boAt Rockerz 255 Pro', price: '₹899', category: 'electronics', search: 'boAt+Rockerz+255+Pro', image: '🎧' },
-    { name: 'Sony WH-1000XM4 Headphones', price: '₹14,990', category: 'electronics', search: 'Sony+WH-1000XM4', image: '🎧' },
-    { name: 'Noise ColorFit Pro Watch', price: '₹1,799', category: 'electronics', search: 'Noise+ColorFit+Pro', image: '⌚' },
-    { name: 'Fastrack Ladies Watch', price: '₹599', category: 'fashion', search: 'Fastrack+Ladies+Watch', image: '⌚' },
-    { name: 'Sonata Analog Watch', price: '₹899', category: 'fashion', search: 'Sonata+Analog+Watch', image: '⌚' },
-    { name: 'Titan Neo Watches', price: '₹2,195', category: 'fashion', search: 'Titan+Neo+Watch', image: '⌚' },
-    { name: 'Casio G-Shock', price: '₹4,995', category: 'fashion', search: 'Casio+G-Shock', image: '⌚' },
-    { name: 'Men T-Shirt Pack of 3', price: '₹599', category: 'fashion', search: 'Men+T-Shirt+Pack', image: '👕' },
-    { name: 'Skechers Sport Shoes', price: '₹2,499', category: 'fashion', search: 'Skechers+Sport+Shoes', image: '👟' },
-    { name: 'Kitchen Induction Cooker', price: '₹1,499', category: 'home', search: 'Induction+Cooker', image: '🍳' },
-    { name: 'Instant Pot 5-in-1', price: '₹7,995', category: 'home', search: 'Instant+Pot', image: '🍳' },
-    { name: 'Coffee Maker Machine', price: '₹2,499', category: 'home', search: 'Coffee+Maker+Machine', image: '☕' },
-    { name: 'Mixer Grinder 750W', price: '₹1,899', category: 'home', search: 'Mixer+Grinder+750W', image: '🔪' },
-    { name: 'LED Desk Lamp', price: '₹499', category: 'home', search: 'LED+Desk+Lamp', image: '💡' },
-    { name: 'Face Serum Combo', price: '₹399', category: 'beauty', search: 'Face+Serum+Combo', image: '🧴' },
-    { name: 'Perfume for Men 100ml', price: '₹299', category: 'beauty', search: 'Men+Perfume+100ml', image: '🧴' },
-    { name: 'Makeup Kit Professional', price: '₹899', category: 'beauty', search: 'Makeup+Kit+Professional', image: '💄' },
-    { name: 'Hair Dryer 1200W', price: '₹699', category: 'beauty', search: 'Hair+Dryer+1200W', image: '💇' },
-    { name: 'Board Game Classic', price: '₹399', category: 'toys', search: 'Board+Game+Classic', image: '🎲' },
-    { name: 'UNO Card Game', price: '₹199', category: 'toys', search: 'UNO+Card+Game', image: '🎴' },
-    { name: 'Remote Control Car', price: '₹1,299', category: 'toys', search: 'Remote+Control+Car', image: '🚗' },
-    { name: 'Soft Toys Combo', price: '₹499', category: 'toys', search: 'Soft+Toys+Combo', image: '🧸' },
-    { name: 'Python Programming Book', price: '₹450', category: 'books', search: 'Python+Programming+Book', image: '📚' },
-    { name: 'Atomic Habits', price: '₹299', category: 'books', search: 'Atomic+Habits+Book', image: '📖' },
-    { name: 'Rich Dad Poor Dad', price: '₹199', category: 'books', search: 'Rich+Dad+Poor+Dad', image: '📖' }
+    { name: 'boAt Nirvana Ivy Earbuds', price: 1299, category: 'electronics', search: 'boAt+Nirvana+Ivy', image: '🎧', rating: 4.1, bestseller: true, deal: false },
+    { name: 'boAt Rockerz 255 Pro', price: 899, category: 'electronics', search: 'boAt+Rockerz+255+Pro', image: '🎧', rating: 4.0, bestseller: true, deal: true },
+    { name: 'Sony WH-1000XM4', price: 14990, category: 'electronics', search: 'Sony+WH-1000XM4', image: '🎧', rating: 4.5, bestseller: false, deal: false },
+    { name: 'Noise ColorFit Pro', price: 1799, category: 'electronics', search: 'Noise+ColorFit+Pro', image: '⌚', rating: 3.8, bestseller: true, deal: false },
+    { name: 'Fastrack Ladies Watch', price: 599, category: 'fashion', search: 'Fastrack+Ladies+Watch', image: '⌚', rating: 3.5, bestseller: false, deal: true },
+    { name: 'Sonata Analog Watch', price: 899, category: 'fashion', search: 'Sonata+Analog+Watch', image: '⌚', rating: 4.0, bestseller: true, deal: false },
+    { name: 'Titan Neo Watch', price: 2195, category: 'fashion', search: 'Titan+Neo+Watch', image: '⌚', rating: 4.2, bestseller: false, deal: false },
+    { name: 'Casio G-Shock', price: 4995, category: 'fashion', search: 'Casio+G-Shock', image: '⌚', rating: 4.6, bestseller: true, deal: false },
+    { name: 'Men T-Shirt Pack', price: 599, category: 'fashion', search: 'Men+T-Shirt+Pack', image: '👕', rating: 3.8, bestseller: true, deal: true },
+    { name: 'Skechers Sport Shoes', price: 2499, category: 'fashion', search: 'Skechers+Sport+Shoes', image: '👟', rating: 4.1, bestseller: false, deal: false },
+    { name: 'Induction Cooker', price: 1499, category: 'home', search: 'Induction+Cooker', image: '🍳', rating: 3.9, bestseller: false, deal: true },
+    { name: 'Instant Pot', price: 7995, category: 'home', search: 'Instant+Pot', image: '🍳', rating: 4.5, bestseller: false, deal: false },
+    { name: 'Coffee Maker', price: 2499, category: 'home', search: 'Coffee+Maker+Machine', image: '☕', rating: 4.0, bestseller: true, deal: false },
+    { name: 'Mixer Grinder 750W', price: 1899, category: 'home', search: 'Mixer+Grinder+750W', image: '🔪', rating: 4.2, bestseller: true, deal: false },
+    { name: 'LED Desk Lamp', price: 499, category: 'home', search: 'LED+Desk+Lamp', image: '💡', rating: 3.7, bestseller: false, deal: true },
+    { name: 'Face Serum Combo', price: 399, category: 'beauty', search: 'Face+Serum+Combo', image: '🧴', rating: 3.9, bestseller: true, deal: true },
+    { name: 'Men Perfume 100ml', price: 299, category: 'beauty', search: 'Men+Perfume+100ml', image: '🧴', rating: 3.5, bestseller: false, deal: true },
+    { name: 'Makeup Kit', price: 899, category: 'beauty', search: 'Makeup+Kit+Professional', image: '💄', rating: 4.1, bestseller: true, deal: false },
+    { name: 'Hair Dryer 1200W', price: 699, category: 'beauty', search: 'Hair+Dryer+1200W', image: '💇', rating: 4.0, bestseller: false, deal: true },
+    { name: 'Board Game Classic', price: 399, category: 'toys', search: 'Board+Game+Classic', image: '🎲', rating: 4.3, bestseller: true, deal: false },
+    { name: 'UNO Card Game', price: 199, category: 'toys', search: 'UNO+Card+Game', image: '🎴', rating: 4.5, bestseller: true, deal: true },
+    { name: 'Remote Control Car', price: 1299, category: 'toys', search: 'Remote+Control+Car', image: '🚗', rating: 4.2, bestseller: false, deal: false },
+    { name: 'Soft Toys Combo', price: 499, category: 'toys', search: 'Soft+Toys+Combo', image: '🧸', rating: 4.1, bestseller: true, deal: true },
+    { name: 'Python Book', price: 450, category: 'books', search: 'Python+Programming+Book', image: '📚', rating: 4.4, bestseller: true, deal: false },
+    { name: 'Atomic Habits', price: 299, category: 'books', search: 'Atomic+Habits+Book', image: '📖', rating: 4.7, bestseller: true, deal: true },
+    { name: 'Rich Dad Poor Dad', price: 199, category: 'books', search: 'Rich+Dad+Poor+Dad', image: '📖', rating: 4.5, bestseller: true, deal: true }
 ];
 
 let participants = [];
@@ -298,31 +295,67 @@ document.getElementById('gift-search')?.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') searchGifts();
 });
 
+// Quick filter buttons
+document.querySelectorAll('.filter-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterByQuickTag(btn.dataset.filter);
+    });
+});
+
 function searchGifts() {
     const query = document.getElementById('gift-search').value.toLowerCase();
     const category = document.getElementById('gift-category').value;
+    const priceFilter = document.getElementById('gift-price').value;
+    const ratingFilter = document.getElementById('gift-rating').value;
     
     let products = POPULAR_GIFTS;
+    
+    if (query) {
+        products = products.filter(p => p.name.toLowerCase().includes(query));
+    }
     
     if (category) {
         products = products.filter(p => p.category === category);
     }
     
-    if (query) {
-        products = products.filter(p => 
-            p.name.toLowerCase().includes(query) || 
-            p.category.includes(query)
-        );
+    if (priceFilter === '500') {
+        products = products.filter(p => p.price < 500);
+    } else if (priceFilter === '500-1000') {
+        products = products.filter(p => p.price >= 500 && p.price <= 1000);
+    } else if (priceFilter === '1000') {
+        products = products.filter(p => p.price >= 1000);
+    }
+    
+    if (ratingFilter) {
+        products = products.filter(p => p.rating >= parseFloat(ratingFilter));
     }
     
     displayGifts(products, query);
+}
+
+function filterByQuickTag(filterType) {
+    let products = POPULAR_GIFTS;
+    
+    if (filterType === 'bestseller') {
+        products = products.filter(p => p.bestseller);
+    } else if (filterType === 'under500') {
+        products = products.filter(p => p.price < 500);
+    } else if (filterType === '4star') {
+        products = products.filter(p => p.rating >= 4);
+    } else if (filterType === 'deals') {
+        products = products.filter(p => p.deal);
+    }
+    
+    document.querySelectorAll('.filter-tag').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-filter="${filterType}"]`).classList.add('active');
+    displayGifts(products);
 }
 
 function displayGifts(products, searchQuery = '') {
     const container = document.getElementById('gift-results');
     
     if (products.length === 0 && searchQuery) {
-        const amazonUrl = `${AMAZON_SEARCH_URL}${searchQuery.replace(/ /g, '+')}&tag=${AMAZON_AFFILIATE_TAG}`;
+        const amazonUrl = `https://www.amazon.in/s?k=${searchQuery.replace(/ /g, '+')}&tag=${AMAZON_AFFILIATE_TAG}`;
         container.innerHTML = `
             <div class="gift-card" style="grid-column: 1/-1; text-align: center;">
                 <div class="gift-image">🔍</div>
@@ -337,18 +370,23 @@ function displayGifts(products, searchQuery = '') {
     }
     
     if (products.length === 0) {
-        container.innerHTML = '<p class="search-hint">Try: "headphones", "watch", "perfume", "coffee maker", etc.</p>';
+        container.innerHTML = '<p class="search-hint">No products found. Try different filters.</p>';
         return;
     }
     
     container.innerHTML = products.map(p => {
-        const searchUrl = `${AMAZON_SEARCH_URL}${p.search}&tag=${AMAZON_AFFILIATE_TAG}`;
+        const searchUrl = `https://www.amazon.in/s?k=${p.search}&tag=${AMAZON_AFFILIATE_TAG}`;
         return `
             <div class="gift-card">
+                ${p.bestseller ? '<span class="badge bestseller">★ Best Seller</span>' : ''}
+                ${p.deal ? '<span class="badge deal">🔥 Deal</span>' : ''}
                 <div class="gift-image">${p.image}</div>
                 <div class="gift-info">
                     <h4>${p.name}</h4>
-                    <p class="gift-price">${p.price}</p>
+                    <div class="gift-meta">
+                        <span class="gift-price">₹${p.price.toLocaleString()}</span>
+                        <span class="gift-rating">★ ${p.rating}</span>
+                    </div>
                     <a href="${searchUrl}" target="_blank" class="gift-link">View on Amazon</a>
                 </div>
             </div>
