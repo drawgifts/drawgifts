@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrawGifts India | Secret Santa, Wish Lists & Gift Finder</title>
+    <title>DrawGifts - Find Perfect Gifts Online</title>
+    <meta name="description" content="Find the best gifts on Amazon India. Best sellers, deals under ₹500, 4+ rated products with affiliate links.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://drawgifts.github.io/drawgifts/">
 </head>
 <body>
     <header>
@@ -14,10 +16,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#secret-santa">Secret Santa</a></li>
-                <li><a href="#wish-lists">Wish Lists</a></li>
                 <li><a href="#gift-finder">Gift Finder</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#bestsellers">Best Sellers</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -29,117 +30,15 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Draw names for your Secret Santa!</h1>
-            <p>Surprise each other with the perfect gift exchange</p>
+            <h1>Find the Perfect Gift</h1>
+            <p>Best Amazon deals with the best prices - curated especially for you!</p>
             <div class="hero-buttons">
-                <a href="#secret-santa" class="btn btn-primary">Start Drawing Names</a>
-                <a href="#gift-finder" class="btn btn-secondary">Find Gifts</a>
+                <a href="#gift-finder" class="btn btn-primary">Find Gifts</a>
+                <a href="#deals" class="btn btn-secondary">Today's Deals</a>
             </div>
         </div>
         <div class="hero-stats">
-            <p>In 2025, more than <strong>42 million</strong> names have been drawn!</p>
-        </div>
-    </section>
-
-    <section id="secret-santa" class="main-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Secret Santa Generator</h2>
-                <p>Create your group and draw names - no account needed!</p>
-            </div>
-            
-            <div class="form-card">
-                <form id="secret-santa-form">
-                    <div class="form-group">
-                        <label for="group-name">Group Name</label>
-                        <input type="text" id="group-name" placeholder="e.g., Office Christmas Party">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="event-date">Event Date</label>
-                        <input type="date" id="event-date">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget">Budget (Optional)</label>
-                        <input type="text" id="budget" placeholder="e.g., ₹500">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Participants</label>
-                        <div class="participants-input">
-                            <input type="text" id="participant-name" placeholder="Enter participant name">
-                            <button type="button" id="add-participant" class="btn btn-small">Add</button>
-                        </div>
-                        <ul id="participants-list" class="participants-list"></ul>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Exclusions (Optional)</label>
-                        <p class="helper-text">Select who shouldn't draw whom</p>
-                        <div class="exclusions-container" id="exclusions-container">
-                            <p class="no-exclusions">Add at least 3 participants to set exclusions</p>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full">Draw Names</button>
-                </form>
-                
-                <div id="draw-results" class="draw-results hidden">
-                    <h3>Results!</h3>
-                    <div id="results-list"></div>
-                    <div class="results-actions">
-                        <button id="share-whatsapp" class="btn btn-whatsapp">Share on WhatsApp</button>
-                        <button id="copy-link" class="btn btn-secondary">Copy Invite Link</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="wish-lists" class="main-section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2>Create Your Wish List</h2>
-                <p>Don't let your Secret Santa guess - tell them what you want!</p>
-            </div>
-            
-            <div class="form-card">
-                <form id="wishlist-form">
-                    <div class="form-group">
-                        <label for="your-name">Your Name</label>
-                        <input type="text" id="your-name" placeholder="Enter your name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Wish List Items</label>
-                        <div class="wishlist-input">
-                            <input type="text" id="wish-item" placeholder="e.g., Blue sweater, Size M">
-                            <input type="text" id="wish-link" placeholder="Amazon link (optional)">
-                            <button type="button" id="add-wish" class="btn btn-small">Add</button>
-                        </div>
-                        <ul id="wish-list" class="wish-list-items"></ul>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full">Save Wish List</button>
-                </form>
-                
-                <div id="wishlist-result" class="wishlist-result hidden">
-                    <p>Your wish list is ready!</p>
-                    <input type="text" id="wishlist-link" readonly>
-                    <button id="copy-wishlist-link" class="btn btn-secondary">Copy Link</button>
-                    <button id="share-wishlist-whatsapp" class="btn btn-whatsapp">Share on WhatsApp</button>
-                </div>
-            </div>
-            
-            <div class="view-wishlist">
-                <h3>View Anyone's Wish List</h3>
-                <form id="view-wishlist-form">
-                    <input type="text" id="view-wishlist-code" placeholder="Enter wish list code">
-                    <button type="submit" class="btn btn-primary">View</button>
-                </form>
-                <div id="view-wishlist-result" class="view-wishlist-result hidden"></div>
-            </div>
+            <p><strong>42M+</strong> gifts found & counting!</p>
         </div>
     </section>
 
@@ -147,130 +46,93 @@
         <div class="container">
             <div class="section-header">
                 <h2>Gift Finder</h2>
-                <p>Find the perfect gift with smart recommendations</p>
+                <p>Search products by budget, rating & category</p>
             </div>
             
-            <div class="filters-container">
-                <div class="filter-group">
-                    <label>Search</label>
-                    <input type="text" id="gift-search" placeholder="Search products...">
-                </div>
-                <div class="filter-group">
-                    <label>Category</label>
-                    <select id="gift-category">
-                        <option value="">All Categories</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="fashion">Fashion</option>
-                        <option value="home">Home & Kitchen</option>
-                        <option value="beauty">Beauty</option>
-                        <option value="toys">Toys & Games</option>
-                        <option value="books">Books</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Price</label>
-                    <select id="gift-price">
-                        <option value="">Any Price</option>
-                        <option value="500">Under ₹500</option>
-                        <option value="500-1000">₹500 - ₹1000</option>
-                        <option value="1000">₹1000+</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Rating</label>
-                    <select id="gift-rating">
-                        <option value="">Any Rating</option>
-                        <option value="4">4★ & above</option>
-                        <option value="4.5">4.5★ & above</option>
-                    </select>
-                </div>
-                <button id="search-gifts" class="btn btn-primary">Find Gifts</button>
+            <div class="search-box">
+                <input type="text" id="gift-search" placeholder="What gift are you looking for?">
+                <select id="gift-category">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home & Kitchen</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="toys">Toys & Games</option>
+                    <option value="books">Books</option>
+                </select>
             </div>
             
-            <div class="quick-filters">
-                <button class="filter-tag active" data-filter="all">All</button>
-                <button class="filter-tag" data-filter="bestseller">Best Sellers</button>
-                <button class="filter-tag" data-filter="under500">Under ₹500</button>
-                <button class="filter-tag" data-filter="4star">4★ & Above</button>
-                <button class="filter-tag" data-filter="deals">Deal of Day</button>
+            <div class="price-tabs">
+                <button class="tab-btn active" data-min="0" data-max="99999">All</button>
+                <button class="tab-btn" data-min="0" data-max="500">Under ₹500</button>
+                <button class="tab-btn" data-min="500" data-max="1000">₹500-1000</button>
+                <button class="tab-btn" data-min="1000" data-max="3000">₹1000-3000</button>
+                <button class="tab-btn" data-min="3000" data-max="99999">₹3000+</button>
             </div>
+            
+            <div class="rating-filter">
+                <label><input type="checkbox" id="filter-4star"> 4★ & Above</label>
+                <label><input type="checkbox" id="filter-bestseller"> Best Sellers Only</label>
+                <label><input type="checkbox" id="filter-deal"> Today's Deals</label>
+            </div>
+            
+            <button id="search-gifts" class="btn btn-primary btn-full">Find Perfect Gifts</button>
             
             <div id="gift-results" class="gift-results"></div>
-            
-            <div class="amazon-disclaimer">
-                <p>As an Amazon Associate, I earn from qualifying purchases.</p>
-            </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="main-section alt-bg">
+    <section id="deals" class="main-section alt-bg">
         <div class="container">
             <div class="section-header">
-                <h2>How Does It Work?</h2>
+                <h2>🔥 Today's Deals</h2>
+                <p>Best discounts - limited time offers!</p>
             </div>
-            
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Enter the Names</h3>
-                    <p>Add all participants who want to join the gift exchange</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Add Exclusions</h3>
-                    <p>Set rules if anyone shouldn't draw for someone specific</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Send Invitations</h3>
-                    <p>Share the link via WhatsApp or email</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Draw Names</h3>
-                    <p>Watch the live draw and see who you got!</p>
-                </div>
-            </div>
+            <div id="deals-results" class="gift-results"></div>
         </div>
     </section>
 
-    <section id="holidays" class="holidays-section">
+    <section id="bestsellers" class="main-section">
         <div class="container">
             <div class="section-header">
-                <h2>Holiday Calendar</h2>
-                <p>Plan your gift exchanges for special occasions</p>
+                <h2>⭐ Best Sellers</h2>
+                <p>Most loved products by thousands!</p>
+            </div>
+            <div id="bestsellers-results" class="gift-results"></div>
+        </div>
+    </section>
+
+    <section id="budget-gifts" class="main-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gifts by Budget</h2>
+                <p>Find perfect gifts within your budget</p>
             </div>
             
-            <div class="holidays-grid">
-                <div class="holiday-card">
-                    <div class="holiday-icon">🎁</div>
-                    <h3>Christmas</h3>
-                    <p>25 December</p>
-                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+            <div class="budget-grid">
+                <div class="budget-card">
+                    <div class="budget-icon">💰</div>
+                    <h3>Under ₹500</h3>
+                    <p>Perfect for Secret Santa, colleagues & small surprises</p>
+                    <button class="btn btn-small" onclick="filterByBudget(0, 500)">Browse</button>
                 </div>
-                
-                <div class="holiday-card">
-                    <div class="holiday-icon">👩</div>
-                    <h3>Mother's Day</h3>
-                    <p>10 May 2026</p>
-                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                <div class="budget-card">
+                    <div class="budget-icon">🎁</div>
+                    <h3>₹500 - ₹1000</h3>
+                    <p>Great for friends & family members</p>
+                    <button class="btn btn-small" onclick="filterByBudget(500, 1000)">Browse</button>
                 </div>
-                
-                <div class="holiday-card">
-                    <div class="holiday-icon">👨</div>
-                    <h3>Father's Day</h3>
-                    <p>21 June 2026</p>
-                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                <div class="budget-card">
+                    <div class="budget-icon">🎀</div>
+                    <h3>₹1000 - ₹3000</h3>
+                    <p>Premium gifts for special occasions</p>
+                    <button class="btn btn-small" onclick="filterByBudget(1000, 3000)">Browse</button>
                 </div>
-                
-                <div class="holiday-card">
-                    <div class="holiday-icon">🎂</div>
-                    <h3>Birthday</h3>
-                    <p>Any Day</p>
-                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                <div class="budget-card">
+                    <div class="budget-icon">👑</div>
+                    <h3>₹3000+</h3>
+                    <p>Luxury gifts for loved ones</p>
+                    <button class="btn btn-small" onclick="filterByBudget(3000, 999999)">Browse</button>
                 </div>
             </div>
         </div>
@@ -281,31 +143,19 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>DrawGifts</h4>
-                    <p>The easiest way to organize Secret Santa and gift exchanges. Free for everyone!</p>
+                    <p>Find the perfect gift for everyone. Curated deals, best sellers & amazing prices!</p>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#secret-santa">Secret Santa</a></li>
-                        <li><a href="#wish-lists">Wish Lists</a></li>
                         <li><a href="#gift-finder">Gift Finder</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#deals">Today's Deals</a></li>
+                        <li><a href="#bestsellers">Best Sellers</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 DrawGifts. Built with ❤️ in India.</p>
-                <p class="affiliate-notice">Amazon Associate Participant</p>
+                <p>&copy; 2026 DrawGifts. As an Amazon Associate, we earn from qualifying purchases.</p>
             </div>
         </div>
     </footer>
