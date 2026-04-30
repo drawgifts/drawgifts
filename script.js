@@ -1,34 +1,36 @@
-// Amazon Affiliate ID - Replace with your actual affiliate tag
+// Amazon Affiliate ID
 const AMAZON_AFFILIATE_TAG = 'dahinwal90-21';
 
-// Amazon Product API simulating products (in production, use real API)
-const MOCK_PRODUCTS = [
-    { name: 'boAt Nirvana Ivy', price: '₹1,299', category: 'electronics', image: '🎧', asin: 'B0BYPT5S3W' },
-    { name: 'boAt Rockerz 255 Pro', price: '₹899', category: 'electronics', image: '🎧', asin: 'B08JSBFJ3S' },
-    { name: 'Sony WH-1000XM4', price: '₹14,990', category: 'electronics', image: '🎧', asin: 'B086CV6TKT' },
-    { name: 'Noise ColorFit Pro', price: '₹1,799', category: 'electronics', image: '⌚', asin: 'B0BYPT5S3W' },
-    { name: 'Fastrack Ladies Watch', price: '₹599', category: 'fashion', image: '⌚', asin: 'B07XJ8C8F5' },
-    { name: 'Sonata Analog Watch', price: '₹899', category: 'fashion', image: '⌚', asin: 'B07XJ8C8F5' },
-    { name: 'Titan Neo Watches', price: '₹2,195', category: 'fashion', image: '⌚', asin: 'B07XJ8C8F5' },
-    { name: 'Casio G-Shock', price: '₹4,995', category: 'fashion', image: '⌚', asin: 'B07XJ8C8F5' },
-    { name: 'Men\'s T-Shirt (Pack of 3)', price: '₹599', category: 'fashion', image: '👕', asin: 'B07XK3Y3ZG' },
-    { name: 'Skechers Sport Shoes', price: '₹2,499', category: 'fashion', image: '👟', asin: 'B07XK3Y3ZG' },
-    { name: 'Kitchen Induction Cooker', price: '₹1,499', category: 'home', image: '🍳', asin: 'B07XK3Y3ZG' },
-    { name: 'Instant Pot 5-in-1', price: '₹7,995', category: 'home', image: '🍳', asin: 'B07XK3Y3ZG' },
-    { name: 'Coffee Maker Machine', price: '₹2,499', category: 'home', image: '☕', asin: 'B07XK3Y3ZG' },
-    { name: 'Mixer Grinder 750W', price: '₹1,899', category: 'home', image: '🔪', asin: 'B07XK3Y3ZG' },
-    { name: 'LED Desk Lamp', price: '₹499', category: 'home', image: '💡', asin: 'B07XK3Y3ZG' },
-    { name: 'Face Serum Combo', price: '₹399', category: 'beauty', image: '🧴', asin: 'B07XK3Y3ZG' },
-    { name: 'Perfume for Men 100ml', price: '₹299', category: 'beauty', image: '🧴', asin: 'B07XK3Y3ZG' },
-    { name: 'Makeup Kit Professional', price: '₹899', category: 'beauty', image: '💄', asin: 'B07XK3Y3ZG' },
-    { name: 'Hair Dryer 1200W', price: '₹699', category: 'beauty', image: '💇', asin: 'B07XK3Y3ZG' },
-    { name: 'Board Game Classic', price: '₹399', category: 'toys', image: '🎲', asin: 'B07XK3Y3ZG' },
-    { name: 'UNO Card Game', price: '₹199', category: 'toys', image: '🎴', asin: 'B07XK3Y3ZG' },
-    { name: 'Remote Control Car', price: '₹1,299', category: 'toys', image: '🚗', asin: 'B07XK3Y3ZG' },
-    { name: 'Soft Toys Combo', price: '₹499', category: 'toys', image: '🧸', asin: 'B07XK3Y3ZG' },
-    { name: 'Python Programming', price: '₹450', category: 'books', image: '📚', asin: 'B07XK3Y3ZG' },
-    { name: 'Atomic Habits', price: '₹299', category: 'books', image: '📖', asin: 'B07XK3Y3ZG' },
-    { name: 'Rich Dad Poor Dad', price: '₹199', category: 'books', image: '📖', asin: 'B07XK3Y3ZG' }
+// Amazon Search URLs for popular gifts
+const AMAZON_SEARCH_URL = 'https://www.amazon.in/s?k=';
+
+const POPULAR_GIFTS = [
+    { name: 'boAt Nirvana Ivy Earbuds', price: '₹1,299', category: 'electronics', search: 'boAt+Nirvana+Ivy', image: '🎧' },
+    { name: 'boAt Rockerz 255 Pro', price: '₹899', category: 'electronics', search: 'boAt+Rockerz+255+Pro', image: '🎧' },
+    { name: 'Sony WH-1000XM4 Headphones', price: '₹14,990', category: 'electronics', search: 'Sony+WH-1000XM4', image: '🎧' },
+    { name: 'Noise ColorFit Pro Watch', price: '₹1,799', category: 'electronics', search: 'Noise+ColorFit+Pro', image: '⌚' },
+    { name: 'Fastrack Ladies Watch', price: '₹599', category: 'fashion', search: 'Fastrack+Ladies+Watch', image: '⌚' },
+    { name: 'Sonata Analog Watch', price: '₹899', category: 'fashion', search: 'Sonata+Analog+Watch', image: '⌚' },
+    { name: 'Titan Neo Watches', price: '₹2,195', category: 'fashion', search: 'Titan+Neo+Watch', image: '⌚' },
+    { name: 'Casio G-Shock', price: '₹4,995', category: 'fashion', search: 'Casio+G-Shock', image: '⌚' },
+    { name: 'Men T-Shirt Pack of 3', price: '₹599', category: 'fashion', search: 'Men+T-Shirt+Pack', image: '👕' },
+    { name: 'Skechers Sport Shoes', price: '₹2,499', category: 'fashion', search: 'Skechers+Sport+Shoes', image: '👟' },
+    { name: 'Kitchen Induction Cooker', price: '₹1,499', category: 'home', search: 'Induction+Cooker', image: '🍳' },
+    { name: 'Instant Pot 5-in-1', price: '₹7,995', category: 'home', search: 'Instant+Pot', image: '🍳' },
+    { name: 'Coffee Maker Machine', price: '₹2,499', category: 'home', search: 'Coffee+Maker+Machine', image: '☕' },
+    { name: 'Mixer Grinder 750W', price: '₹1,899', category: 'home', search: 'Mixer+Grinder+750W', image: '🔪' },
+    { name: 'LED Desk Lamp', price: '₹499', category: 'home', search: 'LED+Desk+Lamp', image: '💡' },
+    { name: 'Face Serum Combo', price: '₹399', category: 'beauty', search: 'Face+Serum+Combo', image: '🧴' },
+    { name: 'Perfume for Men 100ml', price: '₹299', category: 'beauty', search: 'Men+Perfume+100ml', image: '🧴' },
+    { name: 'Makeup Kit Professional', price: '₹899', category: 'beauty', search: 'Makeup+Kit+Professional', image: '💄' },
+    { name: 'Hair Dryer 1200W', price: '₹699', category: 'beauty', search: 'Hair+Dryer+1200W', image: '💇' },
+    { name: 'Board Game Classic', price: '₹399', category: 'toys', search: 'Board+Game+Classic', image: '🎲' },
+    { name: 'UNO Card Game', price: '₹199', category: 'toys', search: 'UNO+Card+Game', image: '🎴' },
+    { name: 'Remote Control Car', price: '₹1,299', category: 'toys', search: 'Remote+Control+Car', image: '🚗' },
+    { name: 'Soft Toys Combo', price: '₹499', category: 'toys', search: 'Soft+Toys+Combo', image: '🧸' },
+    { name: 'Python Programming Book', price: '₹450', category: 'books', search: 'Python+Programming+Book', image: '📚' },
+    { name: 'Atomic Habits', price: '₹299', category: 'books', search: 'Atomic+Habits+Book', image: '📖' },
+    { name: 'Rich Dad Poor Dad', price: '₹199', category: 'books', search: 'Rich+Dad+Poor+Dad', image: '📖' }
 ];
 
 let participants = [];
@@ -300,7 +302,7 @@ function searchGifts() {
     const query = document.getElementById('gift-search').value.toLowerCase();
     const category = document.getElementById('gift-category').value;
     
-    let products = MOCK_PRODUCTS;
+    let products = POPULAR_GIFTS;
     
     if (category) {
         products = products.filter(p => p.category === category);
@@ -313,31 +315,45 @@ function searchGifts() {
         );
     }
     
-    displayGifts(products);
+    displayGifts(products, query);
 }
 
-function displayGifts(products) {
+function displayGifts(products, searchQuery = '') {
     const container = document.getElementById('gift-results');
     
-    if (products.length === 0) {
-        container.innerHTML = '<p class="search-hint">No products found. Try different keywords.</p>';
+    if (products.length === 0 && searchQuery) {
+        const amazonUrl = `${AMAZON_SEARCH_URL}${searchQuery.replace(/ /g, '+')}&tag=${AMAZON_AFFILIATE_TAG}`;
+        container.innerHTML = `
+            <div class="gift-card" style="grid-column: 1/-1; text-align: center;">
+                <div class="gift-image">🔍</div>
+                <div class="gift-info">
+                    <h4>Search on Amazon</h4>
+                    <p class="gift-price">Find "${searchQuery}" on Amazon</p>
+                    <a href="${amazonUrl}" target="_blank" class="gift-link">View on Amazon</a>
+                </div>
+            </div>
+        `;
         return;
     }
     
-    container.innerHTML = products.map(p => `
-        <div class="gift-card">
-            <div class="gift-image">${p.image}</div>
-            <div class="gift-info">
-                <h4>${p.name}</h4>
-                <p class="gift-price">${p.price}</p>
-                <a href="https://www.amazon.in/dp/${p.asin}?tag=${AMAZON_AFFILIATE_TAG}" 
-                   target="_blank" 
-                   class="gift-link">
-                    View on Amazon
-                </a>
+    if (products.length === 0) {
+        container.innerHTML = '<p class="search-hint">Try: "headphones", "watch", "perfume", "coffee maker", etc.</p>';
+        return;
+    }
+    
+    container.innerHTML = products.map(p => {
+        const searchUrl = `${AMAZON_SEARCH_URL}${p.search}&tag=${AMAZON_AFFILIATE_TAG}`;
+        return `
+            <div class="gift-card">
+                <div class="gift-image">${p.image}</div>
+                <div class="gift-info">
+                    <h4>${p.name}</h4>
+                    <p class="gift-price">${p.price}</p>
+                    <a href="${searchUrl}" target="_blank" class="gift-link">View on Amazon</a>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Check URL for shared links
@@ -369,8 +385,8 @@ function checkUrlParams() {
 document.addEventListener('DOMContentLoaded', () => {
     checkUrlParams();
     
-    // Show some gifts initially
-    displayGifts(MOCK_PRODUCTS.slice(0, 8));
+// Show some gifts initially
+displayGifts(POPULAR_GIFTS.slice(0, 8));
 });
 
 // Make functions globally available
