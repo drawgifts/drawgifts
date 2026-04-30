@@ -190,3 +190,66 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('DrawGifts loaded - ' + PRODUCTS.length + ' products');
+
+// Affiliate Link Generator
+document.getElementById('generate-btn')?.addEventListener('click', generateAffiliateLink);
+document.getElementById('product-input')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') generateAffiliateLink();
+});
+
+function generateAffiliateLink() {
+    const input = document.getElementById('product-input').value.trim();
+    if (!input) {
+        alert('Please enter a product URL or name!');
+        return;
+    }
+    
+    let affiliateLink = '';
+    let productName = input;
+    
+    if (input.includes('amazon.in')) {
+        if (input.includes('/dp/')) {
+            const asin = input.match(/\/dp\/([A-Z0-9]{10})/);
+            if (asin) {
+                affiliateLink = `https://www.amazon.in/dp/${asin[1]}?tag=${AMAZON_AFFILIATE_TAG}`;
+            }
+        } else if (input.includes('/gp/product/')) {
+            const asin = input.match(/\/gp\/product\/([A-Z0-9]{10})/);
+            if (asin) {
+                affiliateLink = `https://www.amazon.in/gp/product/${asin[1]}?tag=${AMAZON_AFFILIATE_TAG}`;
+            }
+        } else {
+            const searchTerm = input.split('?')[0].split('/').pop();
+            affiliateLink = `https://www.amazon.in/s?k=${searchTerm}&tag=${AMAZON_AFFILIATE_TAG}`;
+            productName = searchTerm.replace(/-/g, ' ');
+        }
+    } else {
+        const searchTerm = input.replace(/ /g, '+');
+        affiliateLink = `https://www.amazon.in/s?k=${searchTerm}&tag=${AMAZON_AFFILIATE_TAG}`;
+    }
+    
+    document.getElementById('affiliate-link').value = affiliateLink;
+    document.getElementById('generated-link').classList.remove('hidden');
+}
+
+document.getElementById('copy-btn')?.addEventListener('click', () => {
+    const link = document.getElementById('affiliate-link').value;
+    navigator.clipboard.writeText(link);
+    document.getElementById('copy-btn').textContent = 'Copied!';
+    setTimeout(() => {
+        document.getElementById('copy-btn').textContent = 'Copy';
+    }, 2000);
+});
+
+document.getElementById('share-whatsapp')?.addEventListener('click', () => {
+    const link = document.getElementById('affiliate-link').value;
+    const text = `🔥 Check this product on Amazon!\n\n${link}\n\nUse my link to support me 🙏`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+});
+
+document.getElementById('share-copy')?.addEventListener('click', () => {
+    const link = document.getElementById('affiliate-link').value;
+    const text = `Check this product on Amazon: ${link}`;
+    navigator.clipboard.writeText(text);
+    alert('Text copied! Now paste anywhere to share.');
+});

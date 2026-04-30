@@ -20,6 +20,7 @@
                 <li><a href="#gift-finder">Gift Finder</a></li>
                 <li><a href="#deals">Deals</a></li>
                 <li><a href="#bestsellers">Best Sellers</a></li>
+                <li><a href="#generate-link" class="btn-link">Generate Link</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -152,6 +153,7 @@
                         <li><a href="#gift-finder">Gift Finder</a></li>
                         <li><a href="#deals">Today's Deals</a></li>
                         <li><a href="#bestsellers">Best Sellers</a></li>
+                        <li><a href="#generate-link">Generate Link</a></li>
                     </ul>
                 </div>
             </div>
@@ -160,6 +162,44 @@
             </div>
         </div>
     </footer>
+
+    <section id="generate-link" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔗 Generate Affiliate Link</h2>
+                <p>Enter any Amazon product URL or name to create your affiliate link and share with friends!</p>
+            </div>
+            
+            <div class="link-generator">
+                <div class="input-group">
+                    <input type="text" id="product-input" placeholder="Paste Amazon URL or product name...">
+                    <button id="generate-btn" class="btn btn-primary">Generate Link</button>
+                </div>
+                
+                <div id="generated-link" class="result-box hidden">
+                    <p>Your Affiliate Link:</p>
+                    <div class="link-output">
+                        <input type="text" id="affiliate-link" readonly>
+                        <button id="copy-btn" class="btn btn-small">Copy</button>
+                    </div>
+                    <div class="share-buttons">
+                        <button id="share-whatsapp" class="btn btn-whatsapp">Share on WhatsApp</button>
+                        <button id="share-copy" class="btn btn-secondary">Copy Text</button>
+                    </div>
+                </div>
+                
+                <div class="how-it-works">
+                    <h4>How it works:</h4>
+                    <ol>
+                        <li>Copy any Amazon product URL or search name</li>
+                        <li>Paste in the box above</li>
+                        <li>Click "Generate Link"</li>
+                        <li>Share with friend - when they buy, you get commission!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
