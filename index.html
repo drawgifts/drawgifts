@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawGifts India | Secret Santa, Wish Lists & Gift Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">DrawGifts</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#secret-santa">Secret Santa</a></li>
+                <li><a href="#wish-lists">Wish Lists</a></li>
+                <li><a href="#gift-finder">Gift Finder</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Draw names for your Secret Santa!</h1>
+            <p>Surprise each other with the perfect gift exchange</p>
+            <div class="hero-buttons">
+                <a href="#secret-santa" class="btn btn-primary">Start Drawing Names</a>
+                <a href="#gift-finder" class="btn btn-secondary">Find Gifts</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <p>In 2025, more than <strong>42 million</strong> names have been drawn!</p>
+        </div>
+    </section>
+
+    <section id="secret-santa" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Secret Santa Generator</h2>
+                <p>Create your group and draw names - no account needed!</p>
+            </div>
+            
+            <div class="form-card">
+                <form id="secret-santa-form">
+                    <div class="form-group">
+                        <label for="group-name">Group Name</label>
+                        <input type="text" id="group-name" placeholder="e.g., Office Christmas Party">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-date">Event Date</label>
+                        <input type="date" id="event-date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Budget (Optional)</label>
+                        <input type="text" id="budget" placeholder="e.g., ₹500">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Participants</label>
+                        <div class="participants-input">
+                            <input type="text" id="participant-name" placeholder="Enter participant name">
+                            <button type="button" id="add-participant" class="btn btn-small">Add</button>
+                        </div>
+                        <ul id="participants-list" class="participants-list"></ul>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Exclusions (Optional)</label>
+                        <p class="helper-text">Select who shouldn't draw whom</p>
+                        <div class="exclusions-container" id="exclusions-container">
+                            <p class="no-exclusions">Add at least 3 participants to set exclusions</p>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Draw Names</button>
+                </form>
+                
+                <div id="draw-results" class="draw-results hidden">
+                    <h3>Results!</h3>
+                    <div id="results-list"></div>
+                    <div class="results-actions">
+                        <button id="share-whatsapp" class="btn btn-whatsapp">Share on WhatsApp</button>
+                        <button id="copy-link" class="btn btn-secondary">Copy Invite Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wish-lists" class="main-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>Create Your Wish List</h2>
+                <p>Don't let your Secret Santa guess - tell them what you want!</p>
+            </div>
+            
+            <div class="form-card">
+                <form id="wishlist-form">
+                    <div class="form-group">
+                        <label for="your-name">Your Name</label>
+                        <input type="text" id="your-name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Wish List Items</label>
+                        <div class="wishlist-input">
+                            <input type="text" id="wish-item" placeholder="e.g., Blue sweater, Size M">
+                            <input type="text" id="wish-link" placeholder="Amazon link (optional)">
+                            <button type="button" id="add-wish" class="btn btn-small">Add</button>
+                        </div>
+                        <ul id="wish-list" class="wish-list-items"></ul>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Save Wish List</button>
+                </form>
+                
+                <div id="wishlist-result" class="wishlist-result hidden">
+                    <p>Your wish list is ready!</p>
+                    <input type="text" id="wishlist-link" readonly>
+                    <button id="copy-wishlist-link" class="btn btn-secondary">Copy Link</button>
+                    <button id="share-wishlist-whatsapp" class="btn btn-whatsapp">Share on WhatsApp</button>
+                </div>
+            </div>
+            
+            <div class="view-wishlist">
+                <h3>View Anyone's Wish List</h3>
+                <form id="view-wishlist-form">
+                    <input type="text" id="view-wishlist-code" placeholder="Enter wish list code">
+                    <button type="submit" class="btn btn-primary">View</button>
+                </form>
+                <div id="view-wishlist-result" class="view-wishlist-result hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gift-finder" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gift Finder</h2>
+                <p>Find the perfect gift with smart recommendations</p>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="gift-search" placeholder="Search for gifts...">
+                <select id="gift-category">
+                    <option value="">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home & Kitchen</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="toys">Toys & Games</option>
+                    <option value="books">Books</option>
+                </select>
+                <button id="search-gifts" class="btn btn-primary">Search</button>
+            </div>
+            
+            <div id="gift-results" class="gift-results">
+                <p class="search-hint">Try: "headphones", "watch", "perfume", "coffee maker", etc.</p>
+            </div>
+            
+            <div class="amazon-disclaimer">
+                <p>As an Amazon Associate, I earn from qualifying purchases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="main-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Does It Work?</h2>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Enter the Names</h3>
+                    <p>Add all participants who want to join the gift exchange</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Add Exclusions</h3>
+                    <p>Set rules if anyone shouldn't draw for someone specific</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Send Invitations</h3>
+                    <p>Share the link via WhatsApp or email</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Draw Names</h3>
+                    <p>Watch the live draw and see who you got!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="holidays" class="holidays-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Holiday Calendar</h2>
+                <p>Plan your gift exchanges for special occasions</p>
+            </div>
+            
+            <div class="holidays-grid">
+                <div class="holiday-card">
+                    <div class="holiday-icon">🎁</div>
+                    <h3>Christmas</h3>
+                    <p>25 December</p>
+                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                </div>
+                
+                <div class="holiday-card">
+                    <div class="holiday-icon">👩</div>
+                    <h3>Mother's Day</h3>
+                    <p>10 May 2026</p>
+                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                </div>
+                
+                <div class="holiday-card">
+                    <div class="holiday-icon">👨</div>
+                    <h3>Father's Day</h3>
+                    <p>21 June 2026</p>
+                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                </div>
+                
+                <div class="holiday-card">
+                    <div class="holiday-icon">🎂</div>
+                    <h3>Birthday</h3>
+                    <p>Any Day</p>
+                    <a href="#secret-santa" class="btn btn-small">Plan Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DrawGifts</h4>
+                    <p>The easiest way to organize Secret Santa and gift exchanges. Free for everyone!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#secret-santa">Secret Santa</a></li>
+                        <li><a href="#wish-lists">Wish Lists</a></li>
+                        <li><a href="#gift-finder">Gift Finder</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 DrawGifts. Built with ❤️ in India.</p>
+                <p class="affiliate-notice">Amazon Associate Participant</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
