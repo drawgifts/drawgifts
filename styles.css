@@ -213,6 +213,20 @@ a {
     color: var(--white);
 }
 
+.btn-facebook {
+    background: #1877F2;
+    color: var(--white);
+}
+
+.commission-info {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    margin-top: 16px;
+    font-size: 0.9rem;
+}
+
 .how-it-works {
     background: var(--light);
     padding: 20px;

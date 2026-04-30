@@ -243,13 +243,21 @@ document.getElementById('copy-btn')?.addEventListener('click', () => {
 
 document.getElementById('share-whatsapp')?.addEventListener('click', () => {
     const link = document.getElementById('affiliate-link').value;
-    const text = `🔥 Check this product on Amazon!\n\n${link}\n\nUse my link to support me 🙏`;
+    const text = `🎁 Check this product!\n\nBuy from my link & support me 😊:\n\n${link}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+});
+
+document.getElementById('share-facebook')?.addEventListener('click', () => {
+    const link = document.getElementById('affiliate-link').value;
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
 });
 
 document.getElementById('share-copy')?.addEventListener('click', () => {
     const link = document.getElementById('affiliate-link').value;
-    const text = `Check this product on Amazon: ${link}`;
+    const text = `🎁 Check this product on Amazon: ${link}\n\nSupport by buying through this link!`;
     navigator.clipboard.writeText(text);
-    alert('Text copied! Now paste anywhere to share.');
+    document.getElementById('share-copy').textContent = '✓ Copied!';
+    setTimeout(() => {
+        document.getElementById('share-copy').textContent = '📋 Copy Text';
+    }, 2000);
 });
