@@ -230,34 +230,29 @@ function generateAffiliateLink() {
     
     document.getElementById('affiliate-link').value = affiliateLink;
     document.getElementById('generated-link').classList.remove('hidden');
+    
+    // Update share buttons
+    const link = encodeURIComponent(affiliateLink);
+    const text = encodeURIComponent(`Check this product: ${affiliateLink}`);
+    
+    document.getElementById('share-whatsapp').href = `https://wa.me/?text=${text}`;
+    document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${link}`;
 }
 
 document.getElementById('copy-btn')?.addEventListener('click', () => {
     const link = document.getElementById('affiliate-link').value;
     navigator.clipboard.writeText(link);
-    document.getElementById('copy-btn').textContent = 'Copied!';
+    document.getElementById('copy-btn').textContent = '✓ Copied';
     setTimeout(() => {
         document.getElementById('copy-btn').textContent = 'Copy';
     }, 2000);
 });
 
-document.getElementById('share-whatsapp')?.addEventListener('click', () => {
-    const link = document.getElementById('affiliate-link').value;
-    const text = `🎁 Check this product!\n\nBuy from my link & support me 😊:\n\n${link}`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-});
-
-document.getElementById('share-facebook')?.addEventListener('click', () => {
-    const link = document.getElementById('affiliate-link').value;
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`, '_blank');
-});
-
 document.getElementById('share-copy')?.addEventListener('click', () => {
     const link = document.getElementById('affiliate-link').value;
-    const text = `🎁 Check this product on Amazon: ${link}\n\nSupport by buying through this link!`;
-    navigator.clipboard.writeText(text);
-    document.getElementById('share-copy').textContent = '✓ Copied!';
+    navigator.clipboard.writeText(link);
+    document.getElementById('share-copy').textContent = '✓ Copied';
     setTimeout(() => {
-        document.getElementById('share-copy').textContent = '📋 Copy Text';
+        document.getElementById('share-copy').textContent = 'Copy';
     }, 2000);
 });
