@@ -2,7 +2,6 @@ const AMAZON_AFFILIATE_TAG = 'dahinwal90-21';
 const AMAZON_SEARCH_URL = 'https://www.amazon.in/s?k=';
 const API_URL = '/api';
 
-let PRODUCTS = [];
 let useAPI = false;
 
 async function fetchFromAmazon(query) {
