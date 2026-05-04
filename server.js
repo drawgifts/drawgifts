@@ -7,8 +7,8 @@ app.use(express.json());
 app.use(express.static('.'));
 
 const config = {
-    accessKey: 'AKPA8OLXSB1777571103',
-    secretKey: 'FTSlzovfQSbjReP+t+MIEcGe69XNxjOba5g/EYSg',
+    accessKey: 'AKPA8ZZD981777871174',
+    secretKey: 'dCXq6Xv1e9jzpO1NxjRoBDUb8y4JS1wsDjihh6BW',
     associateTag: 'dahinwal90-21',
     endpoint: 'webservices.amazon.in'
 };
