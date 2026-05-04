@@ -29,8 +29,10 @@ async function fetchFromAmazon(query) {
     } catch (e) {
         console.log('API not available, using local data');
     }
-    return null;
+return null;
 }
+
+const PRODUCTS = [
     { name: 'boAt Nirvana Ivy ANC Earbuds', price: 1299, origPrice: 3499, category: 'electronics', keywords: 'earbuds wireless bluetooth headphones', search: 'boAt+Nirvana+Ivy+ANC', image: '🎧', rating: 4.1, reviews: 25000, bestseller: true, deal: true },
     { name: 'boAt Rockerz 255 Pro', price: 899, origPrice: 2999, category: 'electronics', keywords: 'neckband earphones wireless', search: 'boAt+Rockerz+255+Pro', image: '🎧', rating: 4.0, reviews: 50000, bestseller: true, deal: true },
     { name: 'Sony WH-1000XM4 Headphones', price: 14990, origPrice: 21990, category: 'electronics', keywords: 'noise cancelling headphones premium', search: 'Sony+WH-1000XM4', image: '🎧', rating: 4.5, reviews: 15000, bestseller: false, deal: true },
