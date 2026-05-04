@@ -37,7 +37,7 @@ function searchAmazon(keyword, page = 1) {
     const url = `https://${config.endpoint}/onca/xml?${sortedParams}&Signature=${encodeURIComponent(signature)}`;
 
     return axios.get(url).then(res => res.data).catch(err => {
-        console.error('API Error:', err.message);
+        console.error('API Error:', err.message, err.response?.data);
         return null;
     });
 }
