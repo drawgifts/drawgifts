@@ -28,7 +28,12 @@ async function fetchFromAmazon(query) {
     } catch (e) {
         console.log('API not available, using local data');
     }
-return null;
+    return null;
+}
+
+function openAmazonSearch(query) {
+    const url = `https://www.amazon.in/s?k=${encodeURIComponent(query)}&tag=${AMAZON_AFFILIATE_TAG}`;
+    window.open(url, '_blank');
 }
 
 const PRODUCTS = [
@@ -107,23 +112,7 @@ async function searchGifts() {
         return;
     }
 
-    const apiResults = await fetchFromAmazon(query);
-    if (apiResults && useAPI) {
-        displayProducts(apiResults, 'gift-results', query);
-        return;
-    }
-    
-    let filtered = PRODUCTS.filter(p => {
-        if (query) {
-            const searchIn = (p.name + ' ' + p.keywords).toLowerCase();
-            if (!searchIn.includes(query)) return false;
-        }
-        if (category && p.category !== category) return false;
-        if (minRating && p.rating < minRating) return false;
-        return true;
-    });
-    
-    displayProducts(filtered, 'gift-results', query);
+    openAmazonSearch(query);
 }
 
 function showAllProducts() {
@@ -191,7 +180,9 @@ function formatNumber(num) {
 
 function filterByBudget(min, max) {
     const filtered = PRODUCTS.filter(p => p.price >= min && p.price < max);
-    displayProducts(filtered, 'gift-results', `₹${min}-${max}`);
+    const priceRange = min === 0 && max === 99999 ? '' : `+price+%3A-${max}`;
+    const query = document.getElementById('gift-search').value || 'gift';
+    openAmazonSearch(query + priceRange);
     document.getElementById('gift-finder').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -207,8 +198,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         
         const min = parseInt(btn.dataset.min);
         const max = parseInt(btn.dataset.max);
-        const filtered = PRODUCTS.filter(p => p.price >= min && p.price < max);
-        displayProducts(filtered, 'gift-results');
+        filterByBudget(min, max);
     });
 });
 
