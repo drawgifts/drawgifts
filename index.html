@@ -3,54 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrawGifts - Find Perfect Gifts Online</title>
+    <title>DrawGifts - Find Perfect Gifts Online | Best Deals & Guides</title>
     <meta name="description" content="Find perfect gifts on Amazon India. Best deals, under ₹500, 4+ star rated products, best sellers. Free shipping & great prices!">
     <meta name="keywords" content="gift finder, amazon gifts, best gifts, gift under 500, secret santa, birthday gift, anniversary gift, electronics, fashion, books, toys">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="DrawGifts - Find Perfect Gifts Online">
+    <meta property="og:description" content="Best Amazon deals with the best prices - curated especially for you!">
+    <meta property="og:image" content="https://drawgifts.onrender.com/og-image.jpg">
+    <meta property="og:url" content="https://drawgifts.onrender.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DrawGifts - Find Perfect Gifts Online">
+    <meta name="twitter:description" content="Best Amazon deals with the best prices - curated especially for you!">
+    <meta name="twitter:image" content="https://drawgifts.onrender.com/og-image.jpg">
+    
+    <link rel="canonical" href="https://drawgifts.onrender.com">
     <link rel="stylesheet" href="styles.css">
-    <link rel="canonical" href="https://drawgifts.github.io/drawgifts/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "DrawGifts",
+        "url": "https://drawgifts.onrender.com",
+        "description": "Find perfect gifts on Amazon India with best deals and prices.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://drawgifts.onrender.com/#gift-finder",
+            "query-input": "required name=search_term"
+        }
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="#home">DrawGifts</a>
-            </div>
+            <div class="logo"><a href="#home">DrawGifts</a></div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#gift-finder">Gift Finder</a></li>
+                <li><a href="#guides">Gift Guides</a></li>
                 <li><a href="#deals">Deals</a></li>
                 <li><a href="#bestsellers">Best Sellers</a></li>
                 <li><a href="#generate-link" class="btn-link">Generate Link</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Find the Perfect Gift</h1>
+            <h1>Find the Perfect Gift 🎁</h1>
             <p>Best Amazon deals with the best prices - curated especially for you!</p>
             <div class="hero-buttons">
                 <a href="#gift-finder" class="btn btn-primary">Find Gifts</a>
                 <a href="#deals" class="btn btn-secondary">Today's Deals</a>
             </div>
-        </div>
-        <div class="hero-stats">
-            <p><strong>42M+</strong> gifts found & counting!</p>
+            <div class="hero-stats"><p><strong>42M+</strong> gifts found & counting!</p></div>
         </div>
     </section>
 
     <section id="gift-finder" class="main-section">
         <div class="container">
             <div class="section-header">
-                <h2>Gift Finder</h2>
+                <h2>Gift Finder 🔍</h2>
                 <p>Search products by budget, rating & category</p>
             </div>
-            
             <div class="search-box">
                 <input type="text" id="gift-search" placeholder="What gift are you looking for?">
                 <select id="gift-category">
@@ -63,7 +87,6 @@
                     <option value="books">Books</option>
                 </select>
             </div>
-            
             <div class="price-tabs">
                 <button class="tab-btn active" data-min="0" data-max="99999">All</button>
                 <button class="tab-btn" data-min="0" data-max="500">Under ₹500</button>
@@ -71,20 +94,82 @@
                 <button class="tab-btn" data-min="1000" data-max="3000">₹1000-3000</button>
                 <button class="tab-btn" data-min="3000" data-max="99999">₹3000+</button>
             </div>
-            
             <div class="rating-filter">
                 <label><input type="checkbox" id="filter-4star"> 4★ & Above</label>
                 <label><input type="checkbox" id="filter-bestseller"> Best Sellers Only</label>
                 <label><input type="checkbox" id="filter-deal"> Today's Deals</label>
             </div>
-            
             <button id="search-gifts" class="btn btn-primary btn-full">Find Perfect Gifts</button>
-            
             <div id="gift-results" class="gift-results"></div>
         </div>
     </section>
 
-    <section id="deals" class="main-section alt-bg">
+    <section id="guides" class="main-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>📖 Gift Guides</h2>
+                <p>Expert picks for every occasion</p>
+            </div>
+            <div class="guides-grid">
+                <div class="guide-card">
+                    <div class="guide-image">💡</div>
+                    <div class="guide-content">
+                        <span class="guide-tag">Budget</span>
+                        <h3>Top 10 Gifts Under ₹500</h3>
+                        <p>Perfect for Secret Santa, colleagues & small surprises without breaking the bank.</p>
+                        <a href="#budget-gifts" class="guide-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-image">💑</div>
+                    <div class="guide-content">
+                        <span class="guide-tag">Anniversary</span>
+                        <h3>Best Anniversary Gifts 2026</h3>
+                        <p>Surprise your partner with these curated romantic and thoughtful gift ideas.</p>
+                        <a href="#budget-gifts" class="guide-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-image">🎓</div>
+                    <div class="guide-content">
+                        <span class="guide-tag">Graduation</span>
+                        <h3>Graduation Gift Ideas</h3>
+                        <p>Celebrate their achievement with these practical and inspiring gifts.</p>
+                        <a href="#budget-gifts" class="guide-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-image">👨‍‍👧</div>
+                    <div class="guide-content">
+                        <span class="guide-tag">Family</span>
+                        <h3>Gifts for Parents & Siblings</h3>
+                        <p>Show your love with these heartwarming gifts for family members.</p>
+                        <a href="#budget-gifts" class="guide-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-image">🎄</div>
+                    <div class="guide-content">
+                        <span class="guide-tag">Seasonal</span>
+                        <h3>Diwali & Festival Gifts</h3>
+                        <p>Traditional and modern gifts for India's biggest festivals.</p>
+                        <a href="#budget-gifts" class="guide-link">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-image"></div>
+                    <div class="guide-content">
+                        <span class="guide-tag">Corporate</span>
+                        <h3>Office & Corporate Gifts</h3>
+                        <p>Professional gifts for bosses, colleagues, and clients.</p>
+                        <a href="#budget-gifts" class="guide-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="deals" class="main-section">
         <div class="container">
             <div class="section-header">
                 <h2>🔥 Today's Deals</h2>
@@ -94,7 +179,7 @@
         </div>
     </section>
 
-    <section id="bestsellers" class="main-section">
+    <section id="bestsellers" class="main-section alt-bg">
         <div class="container">
             <div class="section-header">
                 <h2>⭐ Best Sellers</h2>
@@ -104,13 +189,12 @@
         </div>
     </section>
 
-    <section id="budget-gifts" class="main-section alt-bg">
+    <section id="budget-gifts" class="main-section">
         <div class="container">
             <div class="section-header">
-                <h2>Gifts by Budget</h2>
+                <h2>💰 Gifts by Budget</h2>
                 <p>Find perfect gifts within your budget</p>
             </div>
-            
             <div class="budget-grid">
                 <div class="budget-card">
                     <div class="budget-icon">💰</div>
@@ -125,16 +209,55 @@
                     <button class="btn btn-small" onclick="filterByBudget(500, 1000)">Browse</button>
                 </div>
                 <div class="budget-card">
-                    <div class="budget-icon">🎀</div>
-                    <h3>₹1000 - ₹3000</h3>
+                    <div class="budget-icon"></div>
+                    <h3>1000 - ₹3000</h3>
                     <p>Premium gifts for special occasions</p>
                     <button class="btn btn-small" onclick="filterByBudget(1000, 3000)">Browse</button>
                 </div>
                 <div class="budget-card">
-                    <div class="budget-icon">👑</div>
+                    <div class="budget-icon"></div>
                     <h3>₹3000+</h3>
                     <p>Luxury gifts for loved ones</p>
                     <button class="btn btn-small" onclick="filterByBudget(3000, 999999)">Browse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="generate-link" class="main-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔗 Generate Affiliate Link</h2>
+                <p>Enter any Amazon product to create your link - share with friends & earn commission!</p>
+            </div>
+            <div class="link-generator">
+                <div class="input-group">
+                    <input type="text" id="product-input" placeholder="Paste Amazon URL or search any product name...">
+                    <button id="generate-btn" class="btn btn-primary">Generate Link</button>
+                </div>
+                <div id="generated-link" class="result-box hidden">
+                    <p>Your Affiliate Link:</p>
+                    <div class="link-output">
+                        <input type="text" id="affiliate-link" readonly>
+                        <button id="copy-btn" class="btn btn-small">Copy</button>
+                    </div>
+                    <div class="share-buttons">
+                        <a id="share-whatsapp" href="#" class="btn-whatsapp" title="Share on WhatsApp">📱</a>
+                        <a id="share-facebook" href="#" class="btn-facebook" title="Share on Facebook">📘</a>
+                        <button id="share-copy" class="btn btn-secondary" title="Copy Link"></button>
+                    </div>
+                    <div class="commission-info">
+                        <p>💰 When your friend buys through this link, you earn commission!</p>
+                    </div>
+                </div>
+                <div class="how-it-works">
+                    <h4>How to earn:</h4>
+                    <ol>
+                        <li>Enter product URL or name</li>
+                        <li>Click Generate Link</li>
+                        <li>Share with friend on WhatsApp</li>
+                        <li>They buy → You get commission! 💰</li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -151,59 +274,28 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#gift-finder">Gift Finder</a></li>
+                        <li><a href="#guides">Gift Guides</a></li>
                         <li><a href="#deals">Today's Deals</a></li>
                         <li><a href="#bestsellers">Best Sellers</a></li>
-                        <li><a href="#generate-link">Generate Link</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Affiliate Disclosure</a></li>
                     </ul>
                 </div>
             </div>
+            <div class="disclaimer">
+                <p>As an Amazon Associate, we earn from qualifying purchases. Prices and availability are subject to change.</p>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 DrawGifts. As an Amazon Associate, we earn from qualifying purchases.</p>
+                <p>&copy; 2026 DrawGifts. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <section id="generate-link" class="main-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>🔗 Generate Affiliate Link</h2>
-                <p>Enter any Amazon product to create your link - share with friends & earn commission!</p>
-            </div>
-            
-            <div class="link-generator">
-                <div class="input-group">
-                    <input type="text" id="product-input" placeholder="Paste Amazon URL or search any product name...">
-                    <button id="generate-btn" class="btn btn-primary">Generate Link</button>
-                </div>
-                
-                <div id="generated-link" class="result-box hidden">
-                    <p>Your Affiliate Link:</p>
-                    <div class="link-output">
-                        <input type="text" id="affiliate-link" readonly>
-                        <button id="copy-btn" class="btn btn-small">Copy</button>
-                    </div>
-                    <div class="share-buttons">
-                        <a id="share-whatsapp" href="#" class="btn btn-whatsapp" title="Share on WhatsApp"></a>
-                        <a id="share-facebook" href="#" class="btn btn-facebook" title="Share on Facebook"></a>
-                        <button id="share-copy" class="btn btn-secondary" title="Copy Link"></button>
-                    </div>
-                    <div class="commission-info">
-                        <p>💰 When your friend buys through this link, you earn commission!</p>
-                    </div>
-                </div>
-                
-                <div class="how-it-works">
-                    <h4>How to earn:</h4>
-                    <ol>
-                        <li>Enter product URL or name</li>
-                        <li>Click Generate Link</li>
-                        <li>Share with friend on WhatsApp</li>
-                        <li>They buy → You get commission! 💰</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <script src="script.js"></script>
 </body>
