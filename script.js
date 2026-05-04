@@ -1,7 +1,36 @@
 const AMAZON_AFFILIATE_TAG = 'dahinwal90-21';
 const AMAZON_SEARCH_URL = 'https://www.amazon.in/s?k=';
+const API_URL = 'http://localhost:3000/api';
 
-const PRODUCTS = [
+let PRODUCTS = [];
+let useAPI = false;
+
+async function fetchFromAmazon(query) {
+    try {
+        const res = await fetch(`${API_URL}?q=${encodeURIComponent(query)}`);
+        const data = await res.json();
+        if (data.products && data.products.length > 0) {
+            useAPI = true;
+            return data.products.map(p => ({
+                name: p.name,
+                price: parseInt(p.price.replace(/[^0-9]/g, '')) || 0,
+                origPrice: 0,
+                category: 'electronics',
+                keywords: query,
+                search: query.replace(/ /g, '+'),
+                image: p.image ? `<img src="${p.image}" alt="product">` : '📦',
+                rating: 0,
+                reviews: 0,
+                bestseller: false,
+                deal: false,
+                amazonUrl: p.url
+            }));
+        }
+    } catch (e) {
+        console.log('API not available, using local data');
+    }
+    return null;
+}
     { name: 'boAt Nirvana Ivy ANC Earbuds', price: 1299, origPrice: 3499, category: 'electronics', keywords: 'earbuds wireless bluetooth headphones', search: 'boAt+Nirvana+Ivy+ANC', image: '🎧', rating: 4.1, reviews: 25000, bestseller: true, deal: true },
     { name: 'boAt Rockerz 255 Pro', price: 899, origPrice: 2999, category: 'electronics', keywords: 'neckband earphones wireless', search: 'boAt+Rockerz+255+Pro', image: '🎧', rating: 4.0, reviews: 50000, bestseller: true, deal: true },
     { name: 'Sony WH-1000XM4 Headphones', price: 14990, origPrice: 21990, category: 'electronics', keywords: 'noise cancelling headphones premium', search: 'Sony+WH-1000XM4', image: '🎧', rating: 4.5, reviews: 15000, bestseller: false, deal: true },
@@ -67,13 +96,19 @@ const PRODUCTS = [
     { name: 'Candle Set Aromatherapy', price: 399, origPrice: 699, category: 'home', keywords: 'candle scented Aromatherapy', search: 'Candle+Aromatherapy+Set', image: '🕯️', rating: 4.2, reviews: 6000, bestseller: true, deal: true }
 ];
 
-function searchGifts() {
+async function searchGifts() {
     const query = document.getElementById('gift-search').value.toLowerCase().trim();
     const category = document.getElementById('gift-category').value;
     const minRating = document.getElementById('filter-4star').checked ? 4 : 0;
     
     if (!query && !category && minRating === 0) {
         showAllProducts();
+        return;
+    }
+
+    const apiResults = await fetchFromAmazon(query);
+    if (apiResults && useAPI) {
+        displayProducts(apiResults, 'gift-results', query);
         return;
     }
     
@@ -126,8 +161,8 @@ function displayProducts(products, containerId, searchQuery = '') {
     }
     
     container.innerHTML = products.map(p => {
-        const discount = Math.round((1 - p.price / p.origPrice) * 100);
-        const searchUrl = `https://www.amazon.in/s?k=${p.search}&tag=${AMAZON_AFFILIATE_TAG}`;
+        const discount = p.origPrice ? Math.round((1 - p.price / p.origPrice) * 100) : 0;
+        const productUrl = p.amazonUrl || `https://www.amazon.in/s?k=${p.search}&tag=${AMAZON_AFFILIATE_TAG}`;
         
         return `
             <div class="product-card">
@@ -136,15 +171,12 @@ function displayProducts(products, containerId, searchQuery = '') {
                 <div class="product-image">${p.image}</div>
                 <div class="product-info">
                     <h4>${p.name}</h4>
-                    <div class="product-rating">
-                        <span class="stars">★ ${p.rating}</span>
-                        <span class="reviews">${formatNumber(p.reviews)}</span>
-                    </div>
+                    ${p.rating ? `<div class="product-rating"><span class="stars">★ ${p.rating}</span><span class="reviews">${formatNumber(p.reviews)}</span></div>` : ''}
                     <div class="product-price">
-                        <span class="current">₹${p.price}</span>
-                        <span class="original">₹${p.origPrice}</span>
+                        <span class="current">${typeof p.price === 'number' ? '₹' + p.price : p.price}</span>
+                        ${p.origPrice ? `<span class="original">₹${p.origPrice}</span>` : ''}
                     </div>
-                    <a href="${searchUrl}" target="_blank" class="amazon-btn">View on Amazon ↗</a>
+                    <a href="${productUrl}" target="_blank" class="amazon-btn">View on Amazon ↗</a>
                 </div>
             </div>
         `;
