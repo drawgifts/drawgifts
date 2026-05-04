@@ -3,296 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrawGifts - Find Perfect Gifts Online | Best Deals & Guides</title>
-    <meta name="description" content="Find perfect gifts on Amazon India. Best deals, under ₹500, 4+ star rated products, best sellers. Free shipping & great prices!">
-    <meta name="keywords" content="gift finder, amazon gifts, best gifts, gift under 500, secret santa, birthday gift, anniversary gift, electronics, fashion, books, toys">
+    <title>DrawGifts - Find Perfect Gifts on Amazon India | Best Deals 2026</title>
+    <meta name="description" content="Find perfect gifts on Amazon India. Best deals, gifts under ₹500, 4+ star rated products, best sellers. Free shipping & amazing prices!">
+    <meta name="keywords" content="gift finder, amazon gifts india, birthday gift ideas, gift under 500, anniversary gifts, electronics deals">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="DrawGifts - Find Perfect Gifts Online">
-    <meta property="og:description" content="Best Amazon deals with the best prices - curated especially for you!">
-    <meta property="og:image" content="https://drawgifts.onrender.com/og-image.jpg">
-    <meta property="og:url" content="https://drawgifts.onrender.com">
+    <meta property="og:title" content="DrawGifts - Perfect Gift Finder for Every Occasion">
+    <meta property="og:description" content="Discover best gifts on Amazon India. Curated deals, budget-friendly options, top-rated products!">
     <meta property="og:type" content="website">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DrawGifts - Find Perfect Gifts Online">
-    <meta name="twitter:description" content="Best Amazon deals with the best prices - curated especially for you!">
-    <meta name="twitter:image" content="https://drawgifts.onrender.com/og-image.jpg">
-    
+    <meta property="og:url" content="https://drawgifts.onrender.com">
     <link rel="canonical" href="https://drawgifts.onrender.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>">
-    
-    <!-- Schema Markup -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "DrawGifts",
-        "url": "https://drawgifts.onrender.com",
-        "description": "Find perfect gifts on Amazon India with best deals and prices.",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://drawgifts.onrender.com/#gift-finder",
-            "query-input": "required name=search_term"
-        }
-    }
+    {"@context":"https://schema.org","@type":"WebSite","name":"DrawGifts","url":"https://drawgifts.onrender.com","description":"Find perfect gifts on Amazon India with best deals and prices.","potentialAction":{"@type":"SearchAction","target":"https://drawgifts.onrender.com/#gift-finder","query-input":"required name=search_term"}}
     </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo"><a href="#home">DrawGifts</a></div>
+            <a href="#home" class="logo">Draw<span>Gifts</span></a>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#gift-finder">Gift Finder</a></li>
-                <li><a href="#guides">Gift Guides</a></li>
-                <li><a href="#deals">Deals</a></li>
+                <li><a href="#gift-finder" class="active">Find Gifts</a></li>
+                <li><a href="#deals">Today's Deals</a></li>
                 <li><a href="#bestsellers">Best Sellers</a></li>
-                <li><a href="#generate-link" class="btn-link">Generate Link</a></li>
+                <li><a href="#budget">By Budget</a></li>
             </ul>
-            <div class="hamburger"><span></span><span></span><span></span></div>
+            <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Find the Perfect Gift 🎁</h1>
-            <p>Best Amazon deals with the best prices - curated especially for you!</p>
-            <div class="hero-buttons">
-                <a href="#gift-finder" class="btn btn-primary">Find Gifts</a>
-                <a href="#deals" class="btn btn-secondary">Today's Deals</a>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Find the <span>Perfect Gift</span> for Everyone </h1>
+                <p>Curated Amazon India deals with best prices. From ₹99 gifts to premium picks!</p>
+                <div class="hero-cta">
+                    <a href="#gift-finder" class="btn btn-primary">Start Searching</a>
+                    <a href="#budget" class="btn btn-outline">Browse by Budget</a>
+                </div>
+                <div class="trust-badges">
+                    <span>✅ Free Shipping</span>
+                    <span>⭐ 4+ Star Rated</span>
+                    <span>🔒 Secure Checkout</span>
+                </div>
             </div>
-            <div class="hero-stats"><p><strong>42M+</strong> gifts found & counting!</p></div>
-        </div>
-    </section>
+        </section>
 
-    <section id="gift-finder" class="main-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Gift Finder 🔍</h2>
-                <p>Search products by budget, rating & category</p>
+        <section id="gift-finder" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Gift Finder</h2>
+                    <p>Search & filter products to find the perfect gift</p>
+                </div>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" id="gift-search" placeholder="Search gifts (e.g., earbuds, watch, perfume)">
+                        <select id="gift-category">
+                            <option value="">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="home">Home & Kitchen</option>
+                            <option value="beauty">Beauty</option>
+                            <option value="toys">Toys & Games</option>
+                            <option value="books">Books</option>
+                        </select>
+                        <button id="search-gifts" class="btn btn-primary">Search</button>
+                    </div>
+                    <div class="filters">
+                        <div class="price-range">
+                            <button class="price-btn active" data-min="0" data-max="99999">All</button>
+                            <button class="price-btn" data-min="0" data-max="500">Under ₹500</button>
+                            <button class="price-btn" data-min="500" data-max="1000">₹500-1000</button>
+                            <button class="price-btn" data-min="1000" data-max="3000">₹1000-3000</button>
+                            <button class="price-btn" data-min="3000" data-max="99999">₹3000+</button>
+                        </div>
+                        <div class="rating-filters">
+                            <label class="checkbox"><input type="checkbox" id="filter-4star"> 4★ & Above</label>
+                            <label class="checkbox"><input type="checkbox" id="filter-bestseller"> Best Sellers</label>
+                            <label class="checkbox"><input type="checkbox" id="filter-deal"> Deals Only</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="gift-results" class="results-grid"></div>
             </div>
-            <div class="search-box">
-                <input type="text" id="gift-search" placeholder="What gift are you looking for?">
-                <select id="gift-category">
-                    <option value="">All Categories</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="fashion">Fashion</option>
-                    <option value="home">Home & Kitchen</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="toys">Toys & Games</option>
-                    <option value="books">Books</option>
-                </select>
-            </div>
-            <div class="price-tabs">
-                <button class="tab-btn active" data-min="0" data-max="99999">All</button>
-                <button class="tab-btn" data-min="0" data-max="500">Under ₹500</button>
-                <button class="tab-btn" data-min="500" data-max="1000">₹500-1000</button>
-                <button class="tab-btn" data-min="1000" data-max="3000">₹1000-3000</button>
-                <button class="tab-btn" data-min="3000" data-max="99999">₹3000+</button>
-            </div>
-            <div class="rating-filter">
-                <label><input type="checkbox" id="filter-4star"> 4★ & Above</label>
-                <label><input type="checkbox" id="filter-bestseller"> Best Sellers Only</label>
-                <label><input type="checkbox" id="filter-deal"> Today's Deals</label>
-            </div>
-            <button id="search-gifts" class="btn btn-primary btn-full">Find Perfect Gifts</button>
-            <div id="gift-results" class="gift-results"></div>
-        </div>
-    </section>
+        </section>
 
-    <section id="guides" class="main-section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2>📖 Gift Guides</h2>
-                <p>Expert picks for every occasion</p>
+        <section id="deals" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-icon">🔥</span>
+                    <h2>Today's Deals</h2>
+                    <p>Biggest discounts - limited time offers!</p>
+                </div>
+                <div id="deals-results" class="results-grid"></div>
             </div>
-            <div class="guides-grid">
-                <div class="guide-card">
-                    <div class="guide-image">💡</div>
-                    <div class="guide-content">
-                        <span class="guide-tag">Budget</span>
-                        <h3>Top 10 Gifts Under ₹500</h3>
-                        <p>Perfect for Secret Santa, colleagues & small surprises without breaking the bank.</p>
-                        <a href="#budget-gifts" class="guide-link">Read More →</a>
-                    </div>
-                </div>
-                <div class="guide-card">
-                    <div class="guide-image">💑</div>
-                    <div class="guide-content">
-                        <span class="guide-tag">Anniversary</span>
-                        <h3>Best Anniversary Gifts 2026</h3>
-                        <p>Surprise your partner with these curated romantic and thoughtful gift ideas.</p>
-                        <a href="#budget-gifts" class="guide-link">Read More →</a>
-                    </div>
-                </div>
-                <div class="guide-card">
-                    <div class="guide-image">🎓</div>
-                    <div class="guide-content">
-                        <span class="guide-tag">Graduation</span>
-                        <h3>Graduation Gift Ideas</h3>
-                        <p>Celebrate their achievement with these practical and inspiring gifts.</p>
-                        <a href="#budget-gifts" class="guide-link">Read More →</a>
-                    </div>
-                </div>
-                <div class="guide-card">
-                    <div class="guide-image">👨‍‍👧</div>
-                    <div class="guide-content">
-                        <span class="guide-tag">Family</span>
-                        <h3>Gifts for Parents & Siblings</h3>
-                        <p>Show your love with these heartwarming gifts for family members.</p>
-                        <a href="#budget-gifts" class="guide-link">Read More →</a>
-                    </div>
-                </div>
-                <div class="guide-card">
-                    <div class="guide-image">🎄</div>
-                    <div class="guide-content">
-                        <span class="guide-tag">Seasonal</span>
-                        <h3>Diwali & Festival Gifts</h3>
-                        <p>Traditional and modern gifts for India's biggest festivals.</p>
-                        <a href="#budget-gifts" class="guide-link">Read More →</a>
-                    </div>
-                </div>
-                <div class="guide-card">
-                    <div class="guide-image"></div>
-                    <div class="guide-content">
-                        <span class="guide-tag">Corporate</span>
-                        <h3>Office & Corporate Gifts</h3>
-                        <p>Professional gifts for bosses, colleagues, and clients.</p>
-                        <a href="#budget-gifts" class="guide-link">Read More →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="deals" class="main-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>🔥 Today's Deals</h2>
-                <p>Best discounts - limited time offers!</p>
+        <section id="bestsellers" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-icon">⭐</span>
+                    <h2>Best Sellers</h2>
+                    <p>Most loved products by thousands of customers</p>
+                </div>
+                <div id="bestsellers-results" class="results-grid"></div>
             </div>
-            <div id="deals-results" class="gift-results"></div>
-        </div>
-    </section>
+        </section>
 
-    <section id="bestsellers" class="main-section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2>⭐ Best Sellers</h2>
-                <p>Most loved products by thousands!</p>
-            </div>
-            <div id="bestsellers-results" class="gift-results"></div>
-        </div>
-    </section>
-
-    <section id="budget-gifts" class="main-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>💰 Gifts by Budget</h2>
-                <p>Find perfect gifts within your budget</p>
-            </div>
-            <div class="budget-grid">
-                <div class="budget-card">
-                    <div class="budget-icon">💰</div>
-                    <h3>Under ₹500</h3>
-                    <p>Perfect for Secret Santa, colleagues & small surprises</p>
-                    <button class="btn btn-small" onclick="filterByBudget(0, 500)">Browse</button>
+        <section id="budget" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-icon">💰</span>
+                    <h2>Gifts by Budget</h2>
+                    <p>Find perfect gifts within your price range</p>
                 </div>
-                <div class="budget-card">
-                    <div class="budget-icon">🎁</div>
-                    <h3>₹500 - ₹1000</h3>
-                    <p>Great for friends & family members</p>
-                    <button class="btn btn-small" onclick="filterByBudget(500, 1000)">Browse</button>
-                </div>
-                <div class="budget-card">
-                    <div class="budget-icon"></div>
-                    <h3>1000 - ₹3000</h3>
-                    <p>Premium gifts for special occasions</p>
-                    <button class="btn btn-small" onclick="filterByBudget(1000, 3000)">Browse</button>
-                </div>
-                <div class="budget-card">
-                    <div class="budget-icon"></div>
-                    <h3>₹3000+</h3>
-                    <p>Luxury gifts for loved ones</p>
-                    <button class="btn btn-small" onclick="filterByBudget(3000, 999999)">Browse</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="generate-link" class="main-section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2>🔗 Generate Affiliate Link</h2>
-                <p>Enter any Amazon product to create your link - share with friends & earn commission!</p>
-            </div>
-            <div class="link-generator">
-                <div class="input-group">
-                    <input type="text" id="product-input" placeholder="Paste Amazon URL or search any product name...">
-                    <button id="generate-btn" class="btn btn-primary">Generate Link</button>
-                </div>
-                <div id="generated-link" class="result-box hidden">
-                    <p>Your Affiliate Link:</p>
-                    <div class="link-output">
-                        <input type="text" id="affiliate-link" readonly>
-                        <button id="copy-btn" class="btn btn-small">Copy</button>
+                <div class="budget-grid">
+                    <div class="budget-card" onclick="filterByBudget(0, 500)">
+                        <div class="budget-emoji"></div>
+                        <h3>Under ₹500</h3>
+                        <p>Secret Santa, colleagues & surprises</p>
+                        <span class="price-tag">Starting ₹99</span>
                     </div>
-                    <div class="share-buttons">
-                        <a id="share-whatsapp" href="#" class="btn-whatsapp" title="Share on WhatsApp">📱</a>
-                        <a id="share-facebook" href="#" class="btn-facebook" title="Share on Facebook">📘</a>
-                        <button id="share-copy" class="btn btn-secondary" title="Copy Link"></button>
+                    <div class="budget-card" onclick="filterByBudget(500, 1000)">
+                        <div class="budget-emoji">🎁</div>
+                        <h3>₹500 - ₹1000</h3>
+                        <p>Friends & family members</p>
+                        <span class="price-tag">Best Value</span>
                     </div>
-                    <div class="commission-info">
-                        <p>💰 When your friend buys through this link, you earn commission!</p>
+                    <div class="budget-card" onclick="filterByBudget(1000, 3000)">
+                        <div class="budget-emoji">💝</div>
+                        <h3>₹1000 - ₹3000</h3>
+                        <p>Premium gifts for special occasions</p>
+                        <span class="price-tag">Popular Choice</span>
+                    </div>
+                    <div class="budget-card" onclick="filterByBudget(3000, 99999)">
+                        <div class="budget-emoji">👑</div>
+                        <h3>₹3000+</h3>
+                        <p>Luxury gifts for loved ones</p>
+                        <span class="price-tag">Premium</span>
                     </div>
                 </div>
-                <div class="how-it-works">
-                    <h4>How to earn:</h4>
-                    <ol>
-                        <li>Enter product URL or name</li>
-                        <li>Click Generate Link</li>
-                        <li>Share with friend on WhatsApp</li>
-                        <li>They buy → You get commission! 💰</li>
-                    </ol>
+            </div>
+        </section>
+
+        <section id="generate-link" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-icon">🔗</span>
+                    <h2>Earn with Amazon</h2>
+                    <p>Generate affiliate links and earn commission on every sale</p>
+                </div>
+                <div class="link-generator">
+                    <div class="input-group">
+                        <input type="text" id="product-input" placeholder="Paste Amazon URL or type product name">
+                        <button id="generate-btn" class="btn btn-primary">Generate</button>
+                    </div>
+                    <div id="generated-link" class="result-box hidden">
+                        <p>Your Affiliate Link:</p>
+                        <div class="link-output">
+                            <input type="text" id="affiliate-link" readonly>
+                            <button id="copy-btn" class="btn btn-small">Copy</button>
+                        </div>
+                        <div class="share-buttons">
+                            <a id="share-whatsapp" href="#" class="share-btn whatsapp" title="Share on WhatsApp"></a>
+                            <a id="share-facebook" href="#" class="share-btn facebook" title="Share on Facebook">📘</a>
+                            <button id="share-copy" class="share-btn copy" title="Copy Link">📋</button>
+                        </div>
+                        <div class="commission-info">💰 Earn commission when someone buys through your link</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+            <div class="footer-grid">
+                <div class="footer-col">
                     <h4>DrawGifts</h4>
-                    <p>Find the perfect gift for everyone. Curated deals, best sellers & amazing prices!</p>
+                    <p>Your trusted gift finder for Amazon India. We help you find perfect gifts at best prices.</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#gift-finder">Gift Finder</a></li>
-                        <li><a href="#guides">Gift Guides</a></li>
                         <li><a href="#deals">Today's Deals</a></li>
                         <li><a href="#bestsellers">Best Sellers</a></li>
+                        <li><a href="#budget">Gifts by Budget</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
+                <div class="footer-col">
+                    <h4>Categories</h4>
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Affiliate Disclosure</a></li>
+                        <li><a href="#gift-finder">Electronics</a></li>
+                        <li><a href="#gift-finder">Fashion</a></li>
+                        <li><a href="#gift-finder">Home & Kitchen</a></li>
+                        <li><a href="#gift-finder">Beauty</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="disclaimer">
-                <p>As an Amazon Associate, we earn from qualifying purchases. Prices and availability are subject to change.</p>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 DrawGifts. All rights reserved.</p>
+                <p>&copy; 2026 DrawGifts. As an Amazon Associate, we earn from qualifying purchases.</p>
             </div>
         </div>
     </footer>
